@@ -27,9 +27,19 @@ function Home() {
   }, []);
 
   return (
-    <main className="container mx-auto max-w-screen-lg min-h-screen flex flex-col md:flex-row items-center justify-between px-5 md:px-10">
-      {/* Left Section */}
-      <div className="text-center md:text-left">
+    <main className="container mx-auto max-w-screen-lg min-h-screen flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-5 md:px-10">
+      {/* Right Section (Image) */}
+      <div className="mt-10 md:mt-0 w-full md:w-1/2 flex justify-center md:justify-start">
+        <img
+          ref={myimageref}
+          className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full shadow-lg"
+          src={img}
+          alt={name}
+        />
+      </div>
+
+      {/* Left Section (Text) */}
+      <div className="text-center md:text-left flex flex-col items-center md:items-start">
         <h1
           ref={h11}
           className="text-3xl md:text-4xl xl:text-5xl font-bold text-dark-heading dark:text-light-heading"
@@ -38,7 +48,7 @@ function Home() {
         </h1>
         <h1
           ref={h12}
-          className="text-3xl md:text-5xl xl:text-6xl font-bold bg-clip-text bg-gradient text-transparent mb-6 leading-normal pb-2" 
+          className="text-3xl md:text-5xl xl:text-6xl font-bold bg-clip-text bg-gradient text-transparent mb-6 leading-normal pb-2"
         >
           {name}
         </h1>
@@ -48,16 +58,6 @@ function Home() {
         >
           {tagline}
         </h2>
-      </div>
-
-      {/* Right Section */}
-      <div className="mt-10 md:mt-0 w-full md:w-1/2 flex justify-center">
-        <img
-          ref={myimageref}
-          className="max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg"
-          src={img}
-          alt={name}
-        />
       </div>
     </main>
   );
